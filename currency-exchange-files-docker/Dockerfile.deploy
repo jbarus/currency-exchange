@@ -1,0 +1,5 @@
+FROM full_java
+
+WORKDIR /app/currency-exchange/target
+
+CMD ["java","-jar","exchange-1.0-SNAPSHOT.jar"]
