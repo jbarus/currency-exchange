@@ -1,4 +1,4 @@
-FROM full_java
+FROM build_stage
 
 WORKDIR /app/currency-exchange/target
 
