@@ -1,9 +1,116 @@
 package com.exchange.app;
 
-public class App 
+import java.util.Random;
+
+public class App
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    public static void main( String[] args ) throws InterruptedException {
+        String[] devOpsFacts = new String[100];
+        devOpsFacts[0] = "DevOps łączy rozwój oprogramowania (Development) i operacje IT (Operations).";
+        devOpsFacts[1] = "Pierwsze koncepcje DevOps pojawiły się około 2008 roku.";
+        devOpsFacts[2] = "Continuous Integration (CI) to praktyka regularnego łączenia kodu z główną gałęzią repozytorium.";
+        devOpsFacts[3] = "Continuous Delivery (CD) automatyzuje proces dostarczania kodu na środowiska testowe i produkcyjne.";
+        devOpsFacts[4] = "Docker to popularne narzędzie do konteneryzacji aplikacji w środowiskach DevOps.";
+        devOpsFacts[5] = "Kubernetes to system do automatyzacji wdrażania, skalowania i zarządzania aplikacjami kontenerowymi.";
+        devOpsFacts[6] = "Jenkins to jedno z najpopularniejszych narzędzi do ciągłej integracji i ciągłego dostarczania.";
+        devOpsFacts[7] = "Infrastructure as Code (IaC) to praktyka zarządzania i provisioning infrastruktury za pomocą kodu.";
+        devOpsFacts[8] = "Terraform to narzędzie open-source do Infrastructure as Code.";
+        devOpsFacts[9] = "Ansible to narzędzie do automatyzacji konfiguracji i zarządzania systemami.";
+        devOpsFacts[10] = "Chef i Puppet to narzędzia do automatyzacji zarządzania konfiguracją.";
+        devOpsFacts[11] = "Monitorowanie i logowanie to kluczowe aspekty DevOps zapewniające stabilność i bezpieczeństwo systemów.";
+        devOpsFacts[12] = "Prometheus to system monitorowania i alertowania używany w środowiskach DevOps.";
+        devOpsFacts[13] = "Grafana to narzędzie do wizualizacji danych monitorujących zebranych przez Prometheus.";
+        devOpsFacts[14] = "Nagios to klasyczne narzędzie do monitorowania systemów i sieci.";
+        devOpsFacts[15] = "DevOps wspiera kulturę współpracy między zespołami programistów i operacji IT.";
+        devOpsFacts[16] = "Celem DevOps jest szybsze i bardziej niezawodne dostarczanie oprogramowania.";
+        devOpsFacts[17] = "DevOps promuje automatyzację procesów związanych z dostarczaniem oprogramowania.";
+        devOpsFacts[18] = "Git to popularny system kontroli wersji używany w praktykach DevOps.";
+        devOpsFacts[19] = "GitHub i GitLab to platformy do hostowania repozytoriów Git i współpracy w projektach DevOps.";
+        devOpsFacts[20] = "CI/CD pipelines to zautomatyzowane procesy integracji i dostarczania kodu.";
+        devOpsFacts[21] = "DevOps umożliwia szybkie reakcje na zmiany i potrzeby rynku.";
+        devOpsFacts[22] = "Serverless architecture to podejście do budowy aplikacji bez zarządzania serwerami.";
+        devOpsFacts[23] = "AWS Lambda to przykład usługi serverless oferowanej przez Amazon Web Services.";
+        devOpsFacts[24] = "Google Cloud Functions i Azure Functions to odpowiedniki AWS Lambda dla Google Cloud i Microsoft Azure.";
+        devOpsFacts[25] = "Blameless postmortems to praktyka analizy awarii bez wskazywania winnych, stosowana w DevOps.";
+        devOpsFacts[26] = "DevSecOps to rozszerzenie DevOps, które integruje bezpieczeństwo (Security) z procesami DevOps.";
+        devOpsFacts[27] = "Chaos engineering to praktyka testowania odporności systemów na awarie.";
+        devOpsFacts[28] = "Netflix stworzył Chaos Monkey, narzędzie do symulacji awarii w środowiskach produkcyjnych.";
+        devOpsFacts[29] = "Site Reliability Engineering (SRE) to praktyka łącząca aspekty DevOps i operacji IT, stworzona przez Google.";
+        devOpsFacts[30] = "Blue-Green Deployment to strategia wdrażania aktualizacji aplikacji bez przestojów.";
+        devOpsFacts[31] = "Canary Deployment to strategia wdrażania, w której nowa wersja oprogramowania jest udostępniana tylko części użytkowników.";
+        devOpsFacts[32] = "Feature Toggles to technika umożliwiająca włączanie i wyłączanie funkcji aplikacji bez zmiany kodu.";
+        devOpsFacts[33] = "Log aggregation to proces zbierania i analizowania logów z różnych źródeł.";
+        devOpsFacts[34] = "Elastic Stack (ELK Stack) to zestaw narzędzi do zbierania, wyszukiwania i analizowania logów (Elasticsearch, Logstash, Kibana).";
+        devOpsFacts[35] = "DevOps może pomóc w skróceniu cyklu dostarczania oprogramowania.";
+        devOpsFacts[36] = "DevOps wspiera praktyki takie jak testowanie automatyczne i automatyzacja wdrożeń.";
+        devOpsFacts[37] = "DevOps zwiększa niezawodność systemów IT dzięki ciągłemu monitorowaniu.";
+        devOpsFacts[38] = "Zarządzanie konfiguracją jest kluczowym elementem DevOps.";
+        devOpsFacts[39] = "Narzędzia takie jak Vagrant pomagają w tworzeniu powtarzalnych środowisk programistycznych.";
+        devOpsFacts[40] = "Spinnaker to platforma do ciągłego dostarczania opracowana przez Netflix.";
+        devOpsFacts[41] = "JIRA jest często używana do śledzenia problemów i zarządzania projektami w procesach DevOps.";
+        devOpsFacts[42] = "DevOps promuje kulturę współodpowiedzialności.";
+        devOpsFacts[43] = "Automatyczne testowanie jest kluczowym elementem metodologii DevOps.";
+        devOpsFacts[44] = "Praktyki DevOps mogą prowadzić do szybszego średniego czasu naprawy (MTTR) po incydentach.";
+        devOpsFacts[45] = "Kontrola wersji jest niezbędna do utrzymania integralności kodu w DevOps.";
+        devOpsFacts[46] = "Narzędzia do orkiestracji kontenerów, takie jak Kubernetes, pomagają zarządzać aplikacjami kontenerowymi na dużą skalę.";
+        devOpsFacts[47] = "Metodologia Twelve-Factor App zapewnia wytyczne do budowy skalowalnych aplikacji webowych.";
+        devOpsFacts[48] = "DevOps promuje ciągłe pętle zwrotne w celu poprawy procesów i produktów.";
+        devOpsFacts[49] = "Immutable infrastructure odnosi się do praktyki zastępowania serwerów zamiast ich modyfikowania.";
+        devOpsFacts[50] = "Narzędzia do zarządzania sekretami, takie jak HashiCorp Vault, pomagają zabezpieczyć wrażliwe dane w środowiskach DevOps.";
+        devOpsFacts[51] = "Architektura mikroserwisów dobrze współgra z praktykami DevOps dla skalowalnych i łatwych w utrzymaniu aplikacji.";
+        devOpsFacts[52] = "Bramki API są często używane w architekturach mikroserwisowych do zarządzania i kierowania żądań.";
+        devOpsFacts[53] = "Service Meshes, takie jak Istio, zapewniają funkcje sieciowe dla mikroserwisów, takie jak równoważenie obciążenia i bezpieczeństwo.";
+        devOpsFacts[54] = "Obserwowalność jest kluczowym aspektem DevOps, obejmującym monitorowanie, logowanie i śledzenie.";
+        devOpsFacts[55] = "OpenTelemetry to zbiór narzędzi i SDK do obserwowalności w aplikacjach chmurowych.";
+        devOpsFacts[56] = "DevOps może pomóc w zmniejszeniu liczby awarii wdrożeń i wycofań.";
+        devOpsFacts[57] = "Inżynierowie niezawodności witryny (SRE) często stosują zasady DevOps do utrzymania dużych systemów.";
+        devOpsFacts[58] = "Narzędzia automatyzacji, takie jak Selenium, są używane do automatycznego testowania przeglądarek w DevOps.";
+        devOpsFacts[59] = "Praktyki DevOps pomagają w dostosowaniu operacji IT do celów biznesowych.";
+        devOpsFacts[60] = "Continuous Deployment (CD) może automatycznie wypuszczać kod na produkcję po przejściu testów.";
+        devOpsFacts[61] = "DevOps zachęca do stosowania zwinnych metodologii w rozwoju oprogramowania.";
+        devOpsFacts[62] = "Security as Code (SaC) integruje praktyki bezpieczeństwa z procesem rozwoju.";
+        devOpsFacts[63] = "Gałęzie funkcji pozwalają deweloperom pracować nad nowymi funkcjami w izolacji przed scaleniem.";
+        devOpsFacts[64] = "Rejestry kontenerów, takie jak Docker Hub, przechowują i dystrybuują obrazy kontenerów.";
+        devOpsFacts[65] = "Narzędzia do provisioning serwerów, takie jak Packer, tworzą obrazy maszyn dla wielu platform.";
+        devOpsFacts[66] = "CloudFormation i ARM templates automatyzują provisioning zasobów chmurowych.";
+        devOpsFacts[67] = "Kultura DevOps sprzyja ciągłemu uczeniu się i doskonaleniu.";
+        devOpsFacts[68] = "Praktyki Agile i DevOps uzupełniają się w dostarczaniu wartości klientom.";
+        devOpsFacts[69] = "DevOps może pomóc w osiągnięciu wysokiej dostępności i odporności systemów.";
+        devOpsFacts[70] = "Praktyki DevOps często obejmują zespoły międzyfunkcyjne współpracujące ze sobą.";
+        devOpsFacts[71] = "Orkiestracja kontenerów upraszcza wdrażanie i zarządzanie aplikacjami w produkcji.";
+        devOpsFacts[72] = "Infrastructure as Code (IaC) pozwala na spójne i powtarzalne konfiguracje infrastruktury.";
+        devOpsFacts[73] = "DevOps może prowadzić do lepszego wykorzystania zasobów i oszczędności kosztów w operacjach IT.";
+        devOpsFacts[74] = "Równoważniki obciążenia rozdzielają ruch sieciowy na wiele serwerów, aby zapewnić niezawodność.";
+        devOpsFacts[75] = "Blue-Green deployments minimalizują przestoje podczas aktualizacji oprogramowania.";
+        devOpsFacts[76] = "Praktyki DevOps wspierają szybsze i bardziej niezawodne wydania oprogramowania.";
+        devOpsFacts[77] = "Ciągłe pętle zwrotne pomagają szybko identyfikować i rozwiązywać problemy w środowiskach DevOps.";
+        devOpsFacts[78] = "DevOps integruje rozwój i operacje w celu zwiększenia współpracy i efektywności.";
+        devOpsFacts[79] = "Automatyczne budowanie i testowanie zapewnia jakość i niezawodność kodu w pipeline'ach DevOps.";
+        devOpsFacts[80] = "Automatyzacja infrastruktury zmniejsza błędy ludzkie i zwiększa spójność.";
+        devOpsFacts[81] = "DevOps zachęca do używania metryk i monitorowania w celu poprawy wydajności systemów.";
+        devOpsFacts[82] = "Narzędzia do odkrywania usług pomagają mikroserwisom znaleźć i komunikować się ze sobą.";
+        devOpsFacts[83] = "Policy as Code (PaC) automatyzuje zarządzanie i zgodność w praktykach DevOps.";
+        devOpsFacts[84] = "Immutable deployments zastępują działające instancje zamiast je modyfikować.";
+        devOpsFacts[85] = "DevOps może poprawić częstotliwość wdrażania, prowadząc do szybszej innowacji.";
+        devOpsFacts[86] = "GitOps to praktyka DevOps, która wykorzystuje Git jako jedyne źródło prawdy dla infrastruktury i aplikacji.";
+        devOpsFacts[87] = "Zasady DevOps mogą pomóc w osiągnięciu bezproblemowego i efektywnego procesu zarządzania incydentami.";
+        devOpsFacts[88] = "Drift konfiguracji występuje, gdy konfiguracje serwerów odbiegają od pożądanego stanu.";
+        devOpsFacts[89] = "DevOps pomaga w zarządzaniu złożonymi środowiskami z wieloma zależnymi usługami.";
+        devOpsFacts[90] = "Narzędzia do chaos engineering, takie jak Gremlin, pomagają w testowaniu odporności systemów.";
+        devOpsFacts[91] = "Praktyki DevOps zwiększają niezawodność i skalowalność aplikacji.";
+        devOpsFacts[92] = "Narzędzia monitorujące dostarczają informacji na temat zdrowia i wydajności systemu.";
+        devOpsFacts[93] = "CI/CD pipelines automatyzują proces integracji i wdrażania zmian kodu.";
+        devOpsFacts[94] = "Feature flags umożliwiają włączanie i wyłączanie funkcji bez wdrażania nowego kodu.";
+        devOpsFacts[95] = "DevOps pomaga w dostosowaniu operacji IT do celów biznesowych w celu uzyskania lepszych wyników.";
+        devOpsFacts[96] = "DevOps promuje kulturę ciągłego doskonalenia i nauki.";
+        devOpsFacts[97] = "Zarządzanie incydentami w DevOps obejmuje szybkie rozwiązywanie i uczenie się na błędach.";
+        devOpsFacts[98] = "Praktyki DevOps skracają czas między komitem kodu a wdrożeniem na produkcję.";
+        devOpsFacts[99] = "Narzędzia i praktyki DevOps zwiększają współpracę, komunikację i integrację w zespołach.";
+
+        Random r = new Random();
+        while (true){
+            System.out.println(devOpsFacts[r.nextInt(100)]+"\n");
+            Thread.sleep(1000);
+        }
     }
 }
